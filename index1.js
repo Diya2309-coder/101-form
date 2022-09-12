@@ -18,8 +18,7 @@ let Entries = retriveEntries();
 
 const displayEntries = () => {
   const entries = retriveEntries();
-if (entries.length > 0)
-{
+
   const rows = entries
     .map((entry) => {
       const name = `<td class="td">${entry.name}</td>`;
@@ -46,12 +45,12 @@ if (entries.length > 0)
   </tr>
     ${rows}
   </table>`;
-}
+
 };
 
 // const saveUserFrom = () => {
 const saveUserFrom = (event) => {
-  console.log("hello");
+  // console.log("hello");
   event.preventDefault();
 
   let name = document.getElementById("name").value;
@@ -125,9 +124,3 @@ function validate(ele) {
     ele.setCustomValidity("");
   }
 }
-
-
-// let reload = document.removeEntries("remove");
-// reload.addEventListener("reload", ()=>{
-//     document.location.reload();
-// })
