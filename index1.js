@@ -1,6 +1,6 @@
 let form = document.getElementById("form");
 
-localStorage.clear();
+// localStorage.clear();
 // let Entries = [];
 
 const retriveEntries = () => {
