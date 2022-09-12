@@ -18,7 +18,8 @@ let Entries = retriveEntries();
 
 const displayEntries = () => {
   const entries = retriveEntries();
-
+if (entries.length > 0)
+{
   const rows = entries
     .map((entry) => {
       const name = `<td class="td">${entry.name}</td>`;
@@ -45,6 +46,7 @@ const displayEntries = () => {
   </tr>
     ${rows}
   </table>`;
+}
 };
 
 // const saveUserFrom = () => {
@@ -52,10 +54,10 @@ const saveUserFrom = (event) => {
   console.log("hello");
   event.preventDefault();
 
-  let name = document.getElementById("Name").value;
-  let email = document.getElementById("Email").value;
-  let password = document.getElementById("Password").value;
-  let dob = document.getElementById("Dob").value;
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let dob = document.getElementById("dob").value;
   let accseptConditions = document.getElementById("agree").checked;
 
   let entry_obj = {
@@ -91,10 +93,10 @@ function getAge(today, birthDate) {
   return age;
 }
 
-let dateELE = document.getElementById("Dob");
+let dateELE = document.getElementById("dob");
 
 dateELE.addEventListener("change", () => {
-  let [year, month, date] = document.getElementById("Dob").value.split("-");
+  let [year, month, date] = document.getElementById("dob").value.split("-");
 
   let dob = new Date(year, month, date);
   let Today = new Date();
@@ -111,7 +113,7 @@ dateELE.addEventListener("change", () => {
   }
 });
 
-const email = document.getElementById("Email");
+const email = document.getElementById("email");
 
 email.addEventListener("input", () => validate(email));
 
@@ -125,7 +127,7 @@ function validate(ele) {
 }
 
 
-let reload = document.removeEntries("remove");
-reload.addEventListener("reload", ()=>{
-    document.location.reload();
-})
+// let reload = document.removeEntries("remove");
+// reload.addEventListener("reload", ()=>{
+//     document.location.reload();
+// })
